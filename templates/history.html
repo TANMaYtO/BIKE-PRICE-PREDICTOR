@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Prediction History</h2>
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Owner Name</th>
+                    <th>Brand Name</th>
+                    <th>Kms Driven</th>
+                    <th>Age of Bike</th>
+                    <th>Power</th>
+                    <th>Prediction</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in historical_data %}
+                <tr>
+                    <td>{{ record['id'] }}</td>
+                    <td>{{ record['owner_name'] }}</td>
+                    <td>{{ record['brand_name'] }}</td>
+                    <td>{{ record['kms_driven_bike'] }}</td>
+                    <td>{{ record['age_bike'] }}</td>
+                    <td>{{ record['power_bike'] }}</td>
+                    <td>{{ record['prediction'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+</body>
+</html>
